@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'hadron'
+
+# Define the `create` subcommand
+command :create do |c|
+  c.desc "Create a new project"
+  c.arg_name "project_name"
+
+  c.action do |args, options|
+    project_name = args.first
+    Hadron.create_project(project_name)
+  end
+end
+
+# Define the `db` subcommand
+command :db do |c|
+  # Define the `create` subcommand for `db`
+  c.command :create do |create|
+    create.desc "Create a database"
+    create.action do |args, options|
+      Hadron.create_database
+    end
+  end
+
+  # Define the `migrate` subcommand for `db`
+  c.command :migrate do |migrate|
+    migrate.desc "Migrate a database"
+    migrate.action do |args, options|
+      Hadron.migrate_database
+    end
+  end
+end
+
+# Define the `generate` subcommand
+command :generate do |c|
+  c.desc "Generate boilerplate code"
+
+  # Define the `scaffold` subcommand for `generate`
+  c.command :scaffold do |scaffold|
+    scaffold.desc "Generate scaffold code"
+    scaffold.arg_name "scaffold_name"
+
+    scaffold.action do |args, options|
+      scaffold_name = args.first
+      Hadron.generate_scaffold(scaffold_name)
+    end
+  end
+end
