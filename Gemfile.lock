@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hadron (0.1.4)
+    hadron (0.1.5)
 
 GEM
   remote: https://rubygems.org/
@@ -43,7 +43,6 @@ GEM
     rubocop-ast (1.24.0)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
-    thor (1.2.1)
     unicode-display_width (2.3.0)
 
 PLATFORMS
@@ -56,7 +55,6 @@ DEPENDENCIES
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)
-  thor (~> 1.2)
 
 BUNDLED WITH
    2.3.15
