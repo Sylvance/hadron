@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
 
-require 'thor'
 require 'hadron'
 
+cli = Hadron::CommandLine.new
+
 # Define the `create` subcommand
-command :create do |c|
+cli.command :create do |c|
   c.desc "Create a new project"
   c.arg_name "project_name"
 
@@ -15,7 +16,7 @@ command :create do |c|
 end
 
 # Define the `db` subcommand
-command :db do |c|
+cli.command :db do |c|
   # Define the `create` subcommand for `db`
   c.command :create do |create|
     create.desc "Create a database"
@@ -34,7 +35,7 @@ command :db do |c|
 end
 
 # Define the `generate` subcommand
-command :generate do |c|
+cli.command :generate do |c|
   c.desc "Generate boilerplate code"
 
   # Define the `scaffold` subcommand for `generate`
@@ -48,3 +49,5 @@ command :generate do |c|
     end
   end
 end
+
+cli.run(ARGV)
