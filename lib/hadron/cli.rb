@@ -2,6 +2,7 @@
 
 require "thor"
 require "fileutils"
+require "erb"
 
 module Hadron
   class Cli < Thor
