@@ -9,6 +9,7 @@ GEM
     ast (2.4.2)
     coderay (1.1.3)
     diff-lcs (1.5.0)
+    fileutils (1.7.0)
     json (2.6.3)
     method_source (1.0.0)
     parallel (1.22.1)
@@ -47,6 +48,7 @@ GEM
     rubocop-ast (1.24.0)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
+    thor (1.2.1)
     unicode-display_width (2.3.0)
 
 PLATFORMS
@@ -54,11 +56,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  fileutils (~> 1.7)
   hadron!
   pry (~> 0.14.1)
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)
+  thor (~> 1.2)
 
 BUNDLED WITH
    2.3.15

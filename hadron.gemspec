@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
     end
   end
 
-  spec.executables = "hadron"
+  spec.executables << "cli"
   spec.require_paths = ["lib"]
   spec.bindir = "exe"
 
