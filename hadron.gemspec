@@ -7,6 +7,7 @@ Gem::Specification.new do |spec|
   spec.version = Hadron::VERSION
   spec.authors = ["Sylvance"]
   spec.email = ["kerandisylvance@gmail.com"]
+  spec.platform = Gem::Platform::RUBY
 
   spec.summary = "Ruby framework called Hadron that allows you to work with gRPC Ruby output easily."
   spec.description = "Ruby framework called Hadron that allows you to work with gRPC Ruby output easily."
@@ -27,8 +28,9 @@ Gem::Specification.new do |spec|
     end
   end
 
-  spec.executables = ["hadron"]
+  spec.executables = "hadron"
   spec.require_paths = ["lib"]
+  spec.bindir = "exe"
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
