@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
     end
   end
 
-  spec.executables << "cli"
+  spec.executables << "hadron"
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
