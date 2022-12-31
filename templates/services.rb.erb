@@ -1,9 +1,0 @@
-require "grpc"
-
-module Helloworld
-  class GreeterServer < Helloworld::Greeter::Service
-    def say_hello(hello_req, _unused_call)
-      Helloworld::HelloResponse.new(message: "Hello \#{hello_req.name}")
-    end
-  end
-end

@@ -1,0 +1,19 @@
+# frozen_string_literal: true
+
+module Project
+  class Server
+    attr_accessor :port
+
+    def initialize(port: "50051")
+      @port = port
+    end
+
+    def call
+      s = GRPC::RpcServer.new
+      http_port = "0.0.0.0:" + port
+      s.add_http2_port(http_port, :this_port_is_insecure)
+      s.handle(Project::Services::GreeterServer)
+      s.run_till_terminated_or_interrupted([1, "int", "SIGQUIT"])
+    end
+  end
+end
